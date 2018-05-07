@@ -1,7 +1,7 @@
 var cc = document.createElement("canvas");
 cc.width = window.innerWidth;
 cc.height = window.innerHeight;
-cc.id = "canavs";
+cc.id = "canvas";
 document.body.appendChild(cc);
 
 var canavs = document.getElementById("canvas");
