@@ -106,7 +106,6 @@ function initIsaac(img) {
       ],
     ]
   ];
-  requestAnimationFrame(draw);
 }
 
 var isaacSprite = new Image(224, 124);
