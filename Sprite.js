@@ -112,8 +112,5 @@ function initIsaac(img) {
 var isaacSprite = new Image(224, 124);
 isaacSprite.onload = function() {
   initIsaac(this);
-  var script = document.createElement("script");
-  script.src = "Player.js";
-  document.body.appendChild(script);
 };
 isaacSprite.src = "res/isaac.png";
