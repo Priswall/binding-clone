@@ -111,5 +111,5 @@
 var player = new Player();
 
 var script = document.createElement("script");
-script.src = "Room.js"
+script.src = "Rock.js"
 document.body.appendChild(script);
