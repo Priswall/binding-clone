@@ -109,7 +109,3 @@
   };
 }
 var player = new Player();
-
-var script = document.createElement("script");
-script.src = "Rock.js"
-document.body.appendChild(script);
