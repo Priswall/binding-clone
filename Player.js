@@ -1,12 +1,4 @@
-
-  player.walkDown.load(isaac[1][0]);
-  player.walkRight.load(isaac[1][1]);
-  player.headDown.load(isaac[0][0]);
-  player.headUp.load(isaac[0][2]);
-  player.headLeft.load(isaac[0][3]);
-  player.headRight.load(isaac[0][1]);
-  
-  function Player() {
+function Player() {
   this.pos = new Vector(217, 122);
   this.vel = new Vector(0, 0);
   this.size = new Vector(32, 20);
@@ -109,3 +101,9 @@
   };
 }
 var player = new Player();
+player.walkDown.load(isaac[1][0]);
+player.walkRight.load(isaac[1][1]);
+player.headDown.load(isaac[0][0]);
+player.headUp.load(isaac[0][2]);
+player.headLeft.load(isaac[0][3]);
+player.headRight.load(isaac[0][1]);
