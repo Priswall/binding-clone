@@ -84,3 +84,4 @@ function draw() {
 
 addEventListener("keydown", function(e) { keys[e.keyCode] = true; })
 addEventListener("keyup", function(e) { keys[e.keyCode] = false; })
+requestAnimationFrame(draw);
