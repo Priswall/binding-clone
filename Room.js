@@ -122,7 +122,3 @@ function Room(x, y) {
     c.drawImage(this.background, this.pos.x, this.pos.y);
   }
 }
-
-var script = document.createElement("script");
-script.src = "Floor.js";
-document.body.appendChild(script);
