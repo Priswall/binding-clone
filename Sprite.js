@@ -52,7 +52,7 @@ function Animation() {
       }
       if(this.currentFrame > this.frames.length - 1) {
         if(this.loop) this.currentFrame = 0;
-        else this.currentFrame = this.frames.length - 1
+        else this.currentFrame = this.frames.length - 1;
       }
       this.frame++;
     }
