@@ -1,6 +1,6 @@
 var isaac = [];
 var burningBasementBackground = new Image();
-burningBasementBackground.src = "https://raw.githubusercontent.com/Priswall/binding-clone/master/basement_backdrop.png";
+burningBasementBackground.src = "res/basement_backdrop.png";
 
 function Frame(img, x, y, w, h, d) {
   this.img = img;
@@ -116,4 +116,4 @@ isaacSprite.onload = function() {
   script.src = "Player.js";
   document.body.appendChild(script);
 };
-isaacSprite.src = "https://raw.githubusercontent.com/Priswall/binding-clone/master/isaac.png";
+isaacSprite.src = "res/isaac.png";
