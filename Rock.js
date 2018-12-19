@@ -50,3 +50,7 @@ function Rock(x, y) {
     c.restore();
   }
 }
+
+var script = document.createElement(script);
+script.src = "Room.js";
+document.body.appendChild(script);
