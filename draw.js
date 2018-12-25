@@ -16,7 +16,7 @@ player.headUp.load(isaac[0][2]);
 player.headLeft.load(isaac[0][3]);
 player.headRight.load(isaac[0][1]);
 
-c.scale(2, 2);
+c.scale(4, 4);
 function draw() {
   frames++;
   if(s === "menu") {
