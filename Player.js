@@ -100,13 +100,6 @@ function Player() {
     }
   };
 }
-var player = new Player();
-player.walkDown.load(isaac[1][0]);
-player.walkRight.load(isaac[1][1]);
-player.headDown.load(isaac[0][0]);
-player.headUp.load(isaac[0][2]);
-player.headLeft.load(isaac[0][3]);
-player.headRight.load(isaac[0][1]);
 
 var script = document.createElement(script);
 script.src = "Rock.js";
