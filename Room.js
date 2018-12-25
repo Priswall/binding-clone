@@ -123,6 +123,6 @@ function Room(x, y) {
   }
 }
 
-var script = document.createElement(script);
+var script = document.createElement("script");
 script.src = "Floor.js";
 document.body.appendChild(script);
