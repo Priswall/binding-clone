@@ -26,6 +26,6 @@ function Floor() {
   }
 }
 
-var script = document.createElement(script);
+var script = document.createElement("script");
 script.src = "draw.js";
 document.body.appendChild(script);
