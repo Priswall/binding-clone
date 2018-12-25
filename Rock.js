@@ -51,6 +51,6 @@ function Rock(x, y) {
   }
 }
 
-var script = document.createElement(script);
+var script = document.createElement("script");
 script.src = "Room.js";
 document.body.appendChild(script);
