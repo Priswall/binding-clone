@@ -21,4 +21,4 @@ function floorDoc() {
 }
 
 var doc = new floorDoc();
-floorDoc.load("gdgfd.gfdgfd");
+doc.load("gdgfd.gfdgfd");
