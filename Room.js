@@ -1,6 +1,7 @@
 function Room(x, y) {
   this.pos = new Vector(x, y);
   this.id = random(0, 0);
+  this.name = "No room loaded!";
   this.tiles = [];
   this.baseEntities = [];
   this.activeEntities = [];
@@ -31,17 +32,7 @@ function Room(x, y) {
     temp.scale(-1, -1);
     temp.drawImage(burningBasementBackground, 0, random(0, 1) * 156, 233, 155, 0, 0, 233, 155);
     
-    for(var i = 0; i < 11; i++)
-    {
-      this.tiles.push(new Rock(74.7 + (i * 28.3), 46));
-      this.tiles.push(new Rock(74.7 + (i * 28.3), 230.6));
-    }
-    for(var i = 0; i < 9; i++)
-    {
-      this.tiles.push(new Rock(46, 46 + (i * 23.2)));
-      this.tiles.push(new Rock(385.6, 46 + (i * 23.2)));
-    }
-    this.tiles.sort(function(a, b){return a - b});
+    doc.createRoom(this);
     
     for(var i = 0; i < this.tiles.length; i++) {
       for(var j = 0; j < this.tiles.length; j++) {
