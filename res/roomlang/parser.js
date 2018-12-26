@@ -3,7 +3,7 @@ function floorDoc() {
   this.commands = [];
   
   this.load = function(fileName) {
-    this.fileName = tileName;
+    this.fileName = fileName;
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", "res/rooms/basement.floor", true);
     rawFile.onreadystatechange = function() {
