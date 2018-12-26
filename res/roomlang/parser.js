@@ -9,7 +9,11 @@ function floorDoc() {
     rawFile.onreadystatechange = function() {
       if (rawFile.readyState === 4) {
         var allText = rawFile.responseText;
-        console.log(allText);
+        this.commands = allText.splice("\n");
+        var string = document.createElement("h1");
+        string.innerHTML = this.commands[0];
+        string.style.color = "white";
+        document.body.appendChild(string);
       }
     }
     rawFile.send();
