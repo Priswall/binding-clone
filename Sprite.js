@@ -1,6 +1,6 @@
 var isaac = [];
 var burningBasementBackground = new Image();
-burningBasementBackground.src = "res/basement_backdrop.png";
+burningBasementBackground.src = "res/gfx/basement_backdrop.png";
 
 function Frame(img, x, y, w, h, d) {
   this.img = img;
@@ -116,4 +116,4 @@ isaacSprite.onload = function() {
   document.body.appendChild(script);
 };
 
-isaacSprite.src = "res/isaac.png";
+isaacSprite.src = "res/gfx/isaac.png";
