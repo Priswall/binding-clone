@@ -9,7 +9,7 @@ function floorDoc() {
     rawFile.onreadystatechange = function() {
       if (rawFile.readyState === 4) {
         var allText = rawFile.responseText;
-        document.innerHTML = allText;
+        console.log(allText);
       }
     }
     rawFile.send();
