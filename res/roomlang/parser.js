@@ -25,18 +25,18 @@ function floorDoc() {
       }
       result = this.commands[i].split(" ");
     }
-  } 
-  for(var i = 0; i < result.length; i++) {
-    switch(result[i]) {
-      case "tile":
-        switch(result[i + 1]) {
-          case 0:
-            tiles.push(new Rock(room.pos.x + (74 + (result[i + 2] * 23.2)), room.pos.y + (46 + (result[i + 3] * 23.2))));
-            break;
-        }
-        break;
+    for(var i = 0; i < result.length; i++) {
+      switch(result[i]) {
+        case "tile":
+          switch(result[i + 1]) {
+            case 0:
+              tiles.push(new Rock(room.pos.x + (74 + (result[i + 2] * 23.2)), room.pos.y + (46 + (result[i + 3] * 23.2))));
+              break;
+          }
+          break;
+      }
     }
-  }
+  } 
 }
 
 var doc = new floorDoc();
