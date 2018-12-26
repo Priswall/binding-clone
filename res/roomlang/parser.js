@@ -41,3 +41,7 @@ function floorDoc() {
 
 var doc = new floorDoc();
 doc.load("gdgfd.gfdgfd");
+
+var script = document.createElement("script");
+script.src = "draw.js";
+document.body.appendChild(script);
