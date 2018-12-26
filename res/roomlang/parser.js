@@ -26,6 +26,7 @@ function floorDoc() {
       result = this.commands[i].split(" ");
     }
     for(var i = 0; i < result.length; i++) {
+      console.log(result[i]);
       switch(result[i]) {
         case "tile":
           switch(result[i + 1]) {
