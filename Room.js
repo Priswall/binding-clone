@@ -19,11 +19,13 @@ function Room(x, y) {
     
     temp.translate(466, 0);
     temp.scale(-1, 1);
-    temp.drawImage(burningBasementBackground, 0, random(0, 1) * 156, 233, 155, 0, 0, 233, 155);    temp.resetTransform();
+    temp.drawImage(burningBasementBackground, 0, random(0, 1) * 156, 233, 155, 0, 0, 233, 155);    
+    temp.resetTransform();
     
     temp.translate(0, 310);
     temp.scale(1, -1);
-    temp.drawImage(burningBasementBackground, 0, random(0, 1) * 156, 233, 155, 0, 0, 233, 155);    temp.resetTransform();
+    temp.drawImage(burningBasementBackground, 0, random(0, 1) * 156, 233, 155, 0, 0, 233, 155);    
+    temp.resetTransform();
     
     temp.translate(466, 310);
     temp.scale(-1, -1);
