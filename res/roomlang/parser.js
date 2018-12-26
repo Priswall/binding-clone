@@ -9,7 +9,7 @@ function floorDoc() {
     rawFile.onreadystatechange = function() {
       if (rawFile.readyState === 4) {
         var allText = rawFile.responseText;
-        this.commands = allText.splice("\n");
+        this.commands = allText.split("\n");
         var string = document.createElement("h1");
         string.innerHTML = this.commands[0];
         string.style.color = "white";
