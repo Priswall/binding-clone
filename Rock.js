@@ -1,7 +1,7 @@
 function Rock(x, y) {
   this.pos = new Vector(x, y);
   this.img = new Image();
-  this.img.src = "res/rocks.png";
+  this.img.src = "res/gfx/rocks.png";
   this.rect = new Rect(0, 0, 32, 32);
   this.sprite = new Frame(this.img, this.rect.x, this.rect.y, this.rect.w, this.rect.h, 0);
   this.hasSprite = false;
