@@ -17,6 +17,7 @@ function floorDoc() {
   
   this.createRoom = function(room) {
     var result = [];
+    room.name = "Testing";
     for(var i = 0; i < this.commands.length; i++) {
       if(this.commands[i][0] === "[") {
         var temp = this.commands[i].replace(/[\[\]]+/g, "");
