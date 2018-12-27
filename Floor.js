@@ -27,5 +27,5 @@ function Floor() {
 }
 
 var script = document.createElement("script");
-script.src = "res/roomlang/parser.js";
+script.src = "draw.js";
 document.body.appendChild(script);
