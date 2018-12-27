@@ -113,7 +113,7 @@ function Player() {
       this.bodySprite.draw(this.pos.x, this.pos.y + 11);
       this.headSprite.draw(this.pos.x, this.pos.y);
     }
-    for(var i = 0; i < this.tears.length;) {
+    for(var i = 0; i < this.tears.length; i++) {
       this.tears[i].draw();
     }
   };
