@@ -113,6 +113,9 @@ function Room(x, y) {
   
   this.draw = function() {
     c.drawImage(this.background, this.pos.x, this.pos.y);
+    c.fillStyle = "white";
+    c.font = "25px Arial";
+    c.fillText(this.name, this.pos.x + 233, this.pos.y + 10);
   }
 }
 
