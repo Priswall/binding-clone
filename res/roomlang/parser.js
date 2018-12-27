@@ -11,6 +11,10 @@ function floorDoc() {
         var allText = rawFile.responseText;
         this.commands = allText.split("\n");
 
+        var script = document.createElement("h1");
+        script.innerHTML = this.commands;
+        document.body.appendChild(script);
+
         var script = document.createElement("script");
         script.src = "Sprite.js";
         document.body.appendChild(script);
@@ -22,7 +26,7 @@ function floorDoc() {
   this.createRoom = function(room) {
     var result = [];
     for(var i = 0; i < this.commands.length; i++) {
-      if(this.commands[i][0] === "[") {
+      if(this.commands[i][0] === /\[/) {
         var temp = this.commands[i].replace(/[\[\]]+/g, "");
         room.name = temp;
       }
