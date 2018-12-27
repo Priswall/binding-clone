@@ -21,7 +21,6 @@ function floorDoc() {
   
   this.createRoom = function(room) {
     var result = [];
-    room.name = this.commands[0];
     for(var i = 0; i < this.commands.length; i++) {
       if(this.commands[i][0] === "[") {
         var temp = this.commands[i].replace(/[\[\]]+/g, "");
@@ -30,6 +29,7 @@ function floorDoc() {
       else if(this.commands[i] !== "\n")
         result.push(this.commands[i].split(" "));
     }
+    room.name = this.commands;
     for(var i = 0; i < result.length; i++) {
       switch(String(result[i])) {
         case "tile":
