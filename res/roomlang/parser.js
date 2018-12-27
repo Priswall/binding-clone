@@ -1,6 +1,6 @@
 function floorDoc() {
   this.fileName = "";
-  this.commands = [];
+  this.commands = ["g"];
   
   this.load = function(fileName) {
     this.fileName = fileName;
