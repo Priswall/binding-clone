@@ -12,7 +12,8 @@ function floorDoc() {
         this.commands = allText.split("\n");
 
         var script = document.createElement("h1");
-        script.innerHTML = this.commands;
+        script.innerHTML = String(this.commands).replace(/[\[\]]+/g, "");;
+        script.style.color = "white";
         document.body.appendChild(script);
 
         var script = document.createElement("script");
