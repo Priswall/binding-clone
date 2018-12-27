@@ -1,6 +1,6 @@
 var baseStats = {
   DAMAGE: 3.5,
-  SHOTSPEED: 1,
+  SHOTSPEED: 4,
   RANGE: 23.75,
   RELOAD: 10,
   SPEED: 2
@@ -11,7 +11,7 @@ function Player() {
   this.vel = new Vector(0, 0);
   this.size = new Vector(32, 20);
   this.acc = 0.2;
-  this.maxSpeed = 2;
+  this.maxSpeed = baseStats.SPEED;
   this.walkDown = new Animation();
   this.walkDown.loop = true;
   this.walkRight = new Animation();
@@ -24,10 +24,10 @@ function Player() {
   this.headSprite = undefined;
   this.tearFlags = [];
   this.tears = [];
-  this.damage = 3.5;
-  this.range = 23.75;
-  this.shotSpeed = 1;
-  this.reload = 10;
+  this.damage = baseStats.DAMAGE;
+  this.range = baseStats.RANGE;
+  this.shotSpeed = baseStats.SHOTSPEED;
+  this.reload = baseStats.RELOAD;
   this.cooldown = this.reload;
   
   this.update = function() {
