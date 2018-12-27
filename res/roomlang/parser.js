@@ -26,12 +26,16 @@ function floorDoc() {
   
   this.createRoom = function(room) {
     var result = [];
+
+    var script = document.createElement("h1");
+    script.innerHTML = this.commands;
+    script.style.color = "white";
+    document.body.appendChild(script);
+    
     for(var i = 0; i < this.commands.length; i++) {
-      if(this.commands[i][0] === '"') {
-        var temp = this.commands[i].replace(/\"/, "");
-        room.name = String(temp);
-      }
-      else if(this.commands[i] !== "\n")
+      var temp = this.commands[0].replace(/\"/, "");
+      room.name = String(temp);
+      if(this.commands[i] !== "\n")
         result.push(this.commands[i].split(" "));
     }
     room.name = String(this.commands) + String(Math.random());
