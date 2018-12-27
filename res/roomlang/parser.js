@@ -14,9 +14,10 @@ function floorDoc() {
         document.body.innerHTML += allText;
         document.body.innerHTML += "<br>";
         document.body.innerHTML += this.commands;
-        for(var i = 0; i < this.commands.length; i++)
-          document.body.innerHTML += this.commands[i].split(" ");
+        for(var i = 0; i < this.commands.length; i++) {
           document.body.innerHTML += "<br>";
+          document.body.innerHTML += this.commands[i].split(" ");
+        }
       }
     }
     rawFile.send();
