@@ -135,7 +135,6 @@ function Player() {
       c.translate(this.pos.x + 24, this.pos.y + 20);
       c.scale(-1, 1);
       this.bodySprite.draw(-8, -9);
-      this.headSprite.draw(-8, -20);
       c.restore();
     } 
     else this.bodySprite.draw(this.pos.x, this.pos.y + 11);
