@@ -14,6 +14,11 @@ function Player() {
   this.headRight = new Animation();
   this.bodySprite = undefined;
   this.headSprite = undefined;
+  this.tearFlags = [];
+  this.tears = [];
+  this.damage = 3.5;
+  this.range = 23.75;
+  this.shotSpeed = 1;
   
   this.update = function() {
     this.walkDown.isPlaying = true;
@@ -64,19 +69,29 @@ function Player() {
     
     if(keys[37]) {
       this.headSprite = this.headLeft.frames[0];
+      this.tears.push(new Tear(this.pos.x, this.pos.y, -1, 0, this.damage, this.range, this.shotSpeed, this.tearFlags));
     }
     if(keys[38]) {
       this.headSprite = this.headUp.frames[0];
+      this.tears.push(new Tear(this.pos.x, this.pos.y, 0, -1, this.damage, this.range, this.shotSpeed, this.tearFlags));
     }
     if(keys[39]) {
       this.headSprite = this.headRight.frames[0];
+      this.tears.push(new Tear(this.pos.x, this.pos.y, 1, 0, this.damage, this.range, this.shotSpeed, this.tearFlags));
     }
     if(keys[40]) {
       this.headSprite = this.headDown.frames[0];
+      this.tears.push(new Tear(this.pos.x, this.pos.y, 0, 1, this.damage, this.range, this.shotSpeed, this.tearFlags));
     }
     
     this.pos.x += this.vel.x;
     this.pos.y += this.vel.y;
+    
+    for(var i = 0; i < this.tears.length;) {
+      this.tears[i].update();
+      if(this.tears[i].range <= 0) this.tears.splice(i, 1);
+      else i++;
+    }
   }
   
   this.draw = function() {
@@ -97,6 +112,9 @@ function Player() {
     } else {
       this.bodySprite.draw(this.pos.x, this.pos.y + 11);
       this.headSprite.draw(this.pos.x, this.pos.y);
+    }
+    for(var i = 0; i < this.tears.length;) {
+      this.tears[i].draw();
     }
   };
 }
