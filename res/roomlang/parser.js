@@ -29,7 +29,7 @@ function floorDoc() {
       else if(this.commands[i] !== "\n")
         result.push(this.commands[i].split(" "));
     }
-    room.name = this.commands;
+    room.name = this.commands[0];
     for(var i = 0; i < result.length; i++) {
       switch(String(result[i])) {
         case "tile":
