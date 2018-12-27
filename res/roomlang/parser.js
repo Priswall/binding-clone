@@ -8,11 +8,11 @@ function floorDoc() {
     rawFile.open("GET", "res/rooms/basement.floor", true);
     rawFile.onreadystatechange = function() {
       if (rawFile.readyState === 4) {
-        var allText = rawFile.responseText;
+        var allText = String(rawFile.responseText).replace(/[\[\]]+/g, "");
         this.commands = allText.split("\n");
 
         var script = document.createElement("h1");
-        script.innerHTML = String(this.commands).replace(/[\[\]]+/g, "");;
+        script.innerHTML = this.commands;
         script.style.color = "white";
         document.body.appendChild(script);
 
@@ -27,8 +27,8 @@ function floorDoc() {
   this.createRoom = function(room) {
     var result = [];
     for(var i = 0; i < this.commands.length; i++) {
-      if(String(this.commands[i][0]) === "[") {
-        var temp = this.commands[i].replace(/[\[\]]+/g, "");
+      if(this.commands[i][0] === '"') {
+        var temp = this.commands[i].replace(/\"/, "");
         room.name = String(temp);
       }
       else if(this.commands[i] !== "\n")
