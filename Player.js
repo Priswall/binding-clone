@@ -79,7 +79,7 @@ function Player() {
     
     if(keys[37]) {
       this.headSprite = this.headLeft.frames[1];
-      if(this.cooldown > this.reload / 2)
+      if(this.cooldown > this.reload / 4)
         this.headSprite = this.headLeft.frames[0];
       if(this.cooldown === this.reload) {
         this.tears.push(new Tear(this.pos.x, this.pos.y, -1, 0, this.damage, this.range, this.shotSpeed, this.tearFlags));
@@ -88,7 +88,7 @@ function Player() {
     }
     else if(keys[38]) {
       this.headSprite = this.headUp.frames[1];
-      if(this.cooldown > this.reload / 2)
+      if(this.cooldown > this.reload / 4)
         this.headSprite = this.headUp.frames[0];
       if(this.cooldown === this.reload) {
         this.tears.push(new Tear(this.pos.x, this.pos.y, 0, -1, this.damage, this.range, this.shotSpeed, this.tearFlags));
@@ -97,7 +97,7 @@ function Player() {
     }
     else if(keys[39]) {
       this.headSprite = this.headRight.frames[1];
-      if(this.cooldown > this.reload / 2)
+      if(this.cooldown > this.reload / 4)
         this.headSprite = this.headRight.frames[0];
       if(this.cooldown === this.reload) {
         this.tears.push(new Tear(this.pos.x, this.pos.y, 1, 0, this.damage, this.range, this.shotSpeed, this.tearFlags));
@@ -106,7 +106,7 @@ function Player() {
     }
     else if(keys[40]) {
       this.headSprite = this.headDown.frames[1];
-      if(this.cooldown > this.reload / 2)
+      if(this.cooldown > this.reload / 4)
         this.headSprite = this.headDown.frames[0];
       if(this.cooldown === this.reload) {
         this.tears.push(new Tear(this.pos.x, this.pos.y, 0, 1, this.damage, this.range, this.shotSpeed, this.tearFlags));
@@ -137,17 +137,19 @@ function Player() {
       this.bodySprite.draw(-8, -9);
       this.headSprite.draw(-8, -20);
       c.restore();
-    } else if(keys[37]) {
+    } 
+    else this.bodySprite.draw(this.pos.x, this.pos.y + 11);
+    
+    if(keys[37]) {
       this.bodySprite.draw(this.pos.x, this.pos.y + 11);
       c.save();
       c.translate(this.pos.x + 24, this.pos.y + 20);
       c.scale(-1, 1);
       this.headSprite.draw(-8, -20);
       c.restore();
-    } else {
-      this.bodySprite.draw(this.pos.x, this.pos.y + 11);
-      this.headSprite.draw(this.pos.x, this.pos.y);
-    }
+    } 
+    else this.headSprite.draw(this.pos.x, this.pos.y);
+    
     for(var i = 0; i < this.tears.length; i++) {
       this.tears[i].draw();
     }
