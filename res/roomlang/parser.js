@@ -21,17 +21,16 @@ function floorDoc() {
       if(this.commands[i][0] === "[") {
         var temp = this.commands[i].replace(/[\[\]]+/g, "");
         room.name = temp;
-        continue;
       }
-      result = this.commands[i].split(" ");
+      else if(this.commands[i] !== "\n")
+        result.push(this.commands[i].split(" "));
     }
     for(var i = 0; i < result.length; i++) {
-      console.log(result[i]);
       switch(result[i]) {
         case "tile":
-          switch(result[i + 1]) {
+          switch(Number(result[i + 1])) {
             case 0:
-              tiles.push(new Rock(room.pos.x + (74 + (result[i + 2] * 23.2)), room.pos.y + (46 + (result[i + 3] * 23.2))));
+              tiles.push(new Rock(room.pos.x + (74 + (Number(result[i + 2]) * 23.2)), room.pos.y + (46 + (Number(result[i + 3]) * 23.2))));
               break;
           }
           break;
