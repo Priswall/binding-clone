@@ -17,13 +17,12 @@ function floorDoc() {
   
   this.createRoom = function(room) {
     var result = [];
-    room.name = "Testing";
+    room.name = this.commands[1][0];
     for(var i = 0; i < this.commands.length; i++) {
       if(this.commands[i][0] === "[") {
         var temp = this.commands[i].replace(/[\[\]]+/g, "");
         room.name = temp;
       }
-      room.name = this.commands[i][0];
       else if(this.commands[i] !== "\n")
         result.push(this.commands[i].split(" "));
     }
