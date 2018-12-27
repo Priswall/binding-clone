@@ -1,3 +1,11 @@
+var baseStats = {
+  DAMAGE: 3.5,
+  SHOTSPEED: 1,
+  RANGE: 23.75,
+  RELOAD: 10,
+  SPEED: 2
+};
+
 function Player() {
   this.pos = new Vector(217, 122);
   this.vel = new Vector(0, 0);
@@ -19,6 +27,8 @@ function Player() {
   this.damage = 3.5;
   this.range = 23.75;
   this.shotSpeed = 1;
+  this.reload = 10;
+  this.cooldown = this.reload;
   
   this.update = function() {
     this.walkDown.isPlaying = true;
@@ -69,19 +79,36 @@ function Player() {
     
     if(keys[37]) {
       this.headSprite = this.headLeft.frames[0];
-      this.tears.push(new Tear(this.pos.x, this.pos.y, -1, 0, this.damage, this.range, this.shotSpeed, this.tearFlags));
+      if(this.cooldown === this.reload) {
+        this.tears.push(new Tear(this.pos.x, this.pos.y, -1, 0, this.damage, this.range, this.shotSpeed, this.tearFlags));
+        this.cooldown = 0;
+      }
     }
-    if(keys[38]) {
+    else if(keys[38]) {
       this.headSprite = this.headUp.frames[0];
-      this.tears.push(new Tear(this.pos.x, this.pos.y, 0, -1, this.damage, this.range, this.shotSpeed, this.tearFlags));
+      if(this.cooldown === this.reload) {
+        this.tears.push(new Tear(this.pos.x, this.pos.y, 0, -1, this.damage, this.range, this.shotSpeed, this.tearFlags));
+        this.cooldown = 0;
+      }
     }
-    if(keys[39]) {
+    else if(keys[39]) {
       this.headSprite = this.headRight.frames[0];
-      this.tears.push(new Tear(this.pos.x, this.pos.y, 1, 0, this.damage, this.range, this.shotSpeed, this.tearFlags));
+      if(this.cooldown === this.reload) {
+        this.tears.push(new Tear(this.pos.x, this.pos.y, 1, 0, this.damage, this.range, this.shotSpeed, this.tearFlags));
+        this.cooldown = 0;
+      }
     }
-    if(keys[40]) {
+    else if(keys[40]) {
       this.headSprite = this.headDown.frames[0];
-      this.tears.push(new Tear(this.pos.x, this.pos.y, 0, 1, this.damage, this.range, this.shotSpeed, this.tearFlags));
+      if(this.cooldown === this.reload) {
+        this.tears.push(new Tear(this.pos.x, this.pos.y, 0, 1, this.damage, this.range, this.shotSpeed, this.tearFlags));
+        this.cooldown = 0;
+      }
+    }
+    
+    if(this.cooldown < this.reload) {
+      this.cooldown += 0.3;
+      if(this.cooldown > this.reload) this.cooldown = this.reload;
     }
     
     this.pos.x += this.vel.x;
