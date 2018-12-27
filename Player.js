@@ -1,8 +1,8 @@
 var baseStats = {
   DAMAGE: 3.5,
-  SHOTSPEED: 4,
+  SHOTSPEED: 2,
   RANGE: 23.75,
-  RELOAD: 10,
+  RELOAD: 7.5,
   SPEED: 2
 };
 
@@ -78,28 +78,36 @@ function Player() {
     if(this.vel.y > this.maxSpeed) this.vel.y = this.maxSpeed;
     
     if(keys[37]) {
-      this.headSprite = this.headLeft.frames[0];
+      this.headSprite = this.headLeft.frames[1];
+      if(this.cooldown > this.reload / 2)
+        this.headSprite = this.headLeft.frames[0];
       if(this.cooldown === this.reload) {
         this.tears.push(new Tear(this.pos.x, this.pos.y, -1, 0, this.damage, this.range, this.shotSpeed, this.tearFlags));
         this.cooldown = 0;
       }
     }
     else if(keys[38]) {
-      this.headSprite = this.headUp.frames[0];
+      this.headSprite = this.headUp.frames[1];
+      if(this.cooldown > this.reload / 2)
+        this.headSprite = this.headUp.frames[0];
       if(this.cooldown === this.reload) {
         this.tears.push(new Tear(this.pos.x, this.pos.y, 0, -1, this.damage, this.range, this.shotSpeed, this.tearFlags));
         this.cooldown = 0;
       }
     }
     else if(keys[39]) {
-      this.headSprite = this.headRight.frames[0];
+      this.headSprite = this.headRight.frames[1];
+      if(this.cooldown > this.reload / 2)
+        this.headSprite = this.headRight.frames[0];
       if(this.cooldown === this.reload) {
         this.tears.push(new Tear(this.pos.x, this.pos.y, 1, 0, this.damage, this.range, this.shotSpeed, this.tearFlags));
         this.cooldown = 0;
       }
     }
     else if(keys[40]) {
-      this.headSprite = this.headDown.frames[0];
+      this.headSprite = this.headDown.frames[1];
+      if(this.cooldown > this.reload / 2)
+        this.headSprite = this.headDown.frames[0];
       if(this.cooldown === this.reload) {
         this.tears.push(new Tear(this.pos.x, this.pos.y, 0, 1, this.damage, this.range, this.shotSpeed, this.tearFlags));
         this.cooldown = 0;
