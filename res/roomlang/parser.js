@@ -10,8 +10,13 @@ function floorDoc() {
       if (rawFile.readyState === 4) {
         var allText = rawFile.responseText;
         this.commands = allText.split("\n");
+        document.body.innerHTML += "<br>";
         document.body.innerHTML += allText;
+        document.body.innerHTML += "<br>";
         document.body.innerHTML += this.commands;
+        for(var i = 0; i < this.commands.length; i++)
+          document.body.innerHTML += this.commands[i].split(" ");
+          document.body.innerHTML += "<br>";
       }
     }
     rawFile.send();
