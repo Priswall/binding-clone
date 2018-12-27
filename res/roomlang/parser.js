@@ -23,7 +23,7 @@ function floorDoc() {
         var temp = this.commands[i].replace(/[\[\]]+/g, "");
         room.name = temp;
       }
-      room.name = this.commands[i][0] === "[";
+      room.name = this.commands[i][0];
       else if(this.commands[i] !== "\n")
         result.push(this.commands[i].split(" "));
     }
