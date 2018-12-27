@@ -10,14 +10,14 @@ function floorDoc() {
       if (rawFile.readyState === 4) {
         var allText = rawFile.responseText;
         this.commands = allText.split("\n");
-        document.body.innerHTML += "<br>";
-        document.body.innerHTML += allText;
-        document.body.innerHTML += "<br>";
-        document.body.innerHTML += this.commands;
-        for(var i = 0; i < this.commands.length; i++) {
-          document.body.innerHTML += "<br>";
-          document.body.innerHTML += this.commands[i].split(" ");
-        }
+//         document.body.innerHTML += "<br>";
+//         document.body.innerHTML += allText;
+//         document.body.innerHTML += "<br>";
+//         document.body.innerHTML += this.commands;
+//         for(var i = 0; i < this.commands.length; i++) {
+//           document.body.innerHTML += "<br>";
+//           document.body.innerHTML += this.commands[i].split(" ");
+//         }
       }
     }
     rawFile.send();
@@ -36,7 +36,7 @@ function floorDoc() {
     }
     document.body.innerHTML += result;
     for(var i = 0; i < result.length; i++) {
-      switch(result[i]) {
+      switch(String(result[i])) {
         case "tile":
           switch(Number(result[i + 1])) {
             case 0:
