@@ -12,7 +12,7 @@ function floorDoc() {
         this.commands = allText.split("\n");
 
         var script = document.createElement("script");
-        script.src = "draw.js";
+        script.src = "Sprite.js";
         document.body.appendChild(script);
       }
     }
