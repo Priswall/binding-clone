@@ -10,6 +10,10 @@ function floorDoc() {
       if (rawFile.readyState === 4) {
         var allText = rawFile.responseText;
         this.commands = allText.split("\n");
+
+        var script = document.createElement("script");
+        script.src = "draw.js";
+        document.body.appendChild(script);
       }
     }
     rawFile.send();
