@@ -26,6 +26,7 @@ function floorDoc() {
       else if(this.commands[i] !== "\n")
         result.push(this.commands[i].split(" "));
     }
+    document.body.innerHTML += result;
     for(var i = 0; i < result.length; i++) {
       switch(result[i]) {
         case "tile":
