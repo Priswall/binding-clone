@@ -30,7 +30,7 @@ function floorDoc() {
         case "tile":
           switch(Number(result[i + 1])) {
             case 0:
-              tiles.push(new Rock(room.pos.x + (74 + (Number(result[i + 2]) * 23.2)), room.pos.y + (46 + (Number(result[i + 3]) * 23.2))));
+              room.tiles.push(new Rock(room.pos.x + (74 + (Number(result[i + 2]) * 23.2)), room.pos.y + (46 + (Number(result[i + 3]) * 23.2))));
               break;
           }
           break;
