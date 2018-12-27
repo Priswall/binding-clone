@@ -112,7 +112,7 @@ var isaacSprite = new Image(224, 124);
 isaacSprite.onload = function() {
   initIsaac(this);
   var script = document.createElement("script");
-  script.src = "Player.js";
+  script.src = "Tear.js";
   document.body.appendChild(script);
 };
 
