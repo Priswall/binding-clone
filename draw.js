@@ -19,7 +19,6 @@ player.headRight.load(isaac[0][1]);
 c.scale(2, 2);
 function draw() {
   frames++;
-  doc.createRoom(floor.rooms[0]);
   if(s === "menu") {
     c.imageSmoothingEnabled = false;
     c.fillStyle = "black";
