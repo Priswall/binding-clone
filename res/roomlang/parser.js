@@ -22,11 +22,11 @@ function floorDoc() {
             result.push(this.commands[i].split(" "));
         }
         for(var i = 0; i < result.length; i++) {
-          switch(String(result[i])) {
+          switch(String(result[i][0])) {
             case "tile":
-              switch(Number(result[i + 1])) {
+              switch(Number(result[i][1])) {
                 case 0:
-                  room.tiles.push(new Rock(room.pos.x + (74 + (Number(result[i + 2]) * 23.2)), room.pos.y + (46 + (Number(result[i + 3]) * 23.2))));
+                  room.tiles.push(new Rock(room.pos.x + (74 + (Number(result[i][2]) * 23.2)), room.pos.y + (46 + (Number(result[i][3]) * 23.2))));
                   console.log("TESTING!!!");
                   break;
               }
