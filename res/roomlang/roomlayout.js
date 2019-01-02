@@ -1,5 +1,5 @@
-function RoomLayout(name, tiles, entities) {
-  this.tiles = tiles;
-  this.entities = entities;
-  this.name = name;
+function RoomLayout() {
+  this.tiles = null;
+  this.entities = null;
+  this.name = null;
 };
