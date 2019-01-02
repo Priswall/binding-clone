@@ -5,17 +5,14 @@ function floorDoc() {
   
   this.load = function(fileName) {
     this.fileName = fileName;
-    var result = [];
-    
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", this.fileName, true);
     rawFile.onreadystatechange = function() {
       if (rawFile.readyState === 4) {
+        var result = [];
         var allText = String(rawFile.responseText);
         this.commands = allText.split("\n");
         for(var i = 0; i < this.commands.length; i++) {
-          var temp = this.commands[0].replace(/[\[\]]+/g, "");
-          room.name = String(temp);
           if(this.commands[i] !== "\n")
             result.push(this.commands[i].split(" "));
         }
