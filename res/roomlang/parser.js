@@ -5,9 +5,6 @@ function floorDoc() {
   
   this.load = function(fileName) {
     this.fileName = fileName;
-  }
-  
-  this.createRoom = function(room) {
     var result = [];
     
     var rawFile = new XMLHttpRequest();
@@ -27,18 +24,23 @@ function floorDoc() {
             case "tile":
               switch(Number(result[i][1])) {
                 case 0:
-                  var temp = new RoomLayout();
-                  temp.name = "hello";
-                  temp.tiles.push(new Rock(room.pos.x + (74 + (Number(result[i][2]) * 23.2)), room.pos.y + (46 + (Number(result[i][3]) * 23.2))));
-                  console.log(temp);
+                  this.roomlayouts[this.roomlayouts.length - 1].tiles.push(new Rock(room.pos.x + (74 + (Number(result[i][2]) * 23.2)), room.pos.y + (46 + (Number(result[i][3]) * 23.2))));
                   break;
               }
+              break;
+            default:
+              console.log(this.roomlayouts[this.roomlayouts.length - 1]);
+              this.roomlayouts.push(new RoomLayout());
+              this.roomlayouts[this.roomlayouts.length - 1].name = result[i].join(" ");
               break;
           }
         }
       }
     }
     rawFile.send();
+  }
+  
+  this.createRoom = function(room) {
   } 
 }
 
