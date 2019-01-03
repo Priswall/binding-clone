@@ -3,11 +3,6 @@ function floorDoc() {
   this.commands = [];
   this.roomlayouts = [];
   
-  this.createRoomLayout = function(name) {
-    this.roomlayouts.push(new RoomLayout());
-    this.roomlayouts[this.roomlayouts.length - 1].name = name;
-  }
-  
   this.load = function(fileName) {
     this.fileName = fileName;
     var rawFile = new XMLHttpRequest();
@@ -31,7 +26,8 @@ function floorDoc() {
               }
               break;
             default:
-              this.createRoomLayout(result[i].join(" "));
+              this.roomlayouts.push(new RoomLayout());
+              this.roomlayouts[this.roomlayouts.length - 1].name = result[i].join(" ");
               break;
           }
         }
