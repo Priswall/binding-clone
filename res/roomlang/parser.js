@@ -45,4 +45,3 @@ function floorDoc() {
 }
 
 var doc = new floorDoc();
-doc.load("res/rooms/basement.floor");
