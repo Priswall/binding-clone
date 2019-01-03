@@ -27,7 +27,7 @@ function floorDoc() {
               break;
             default:
               this.roomlayouts.push(new RoomLayout());
-              this.roomlayouts[this.roomlayouts.length - 1].name = result[i].join(" ");
+              this.roomlayouts[this.roomlayouts.length - 1].name = String(result[i].join(" "));
               break;
           }
         }
